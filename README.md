@@ -1,141 +1,172 @@
-# ⚠️ Unmaintained ⚠️
+# mere-blog-theme
 
-# Prologue - Jekyll Theme
+[![Gem Version](https://badge.fury.io/rb/mere-blog-theme.svg)](https://badge.fury.io/rb/mere-blog-theme) 
+![Gem](https://img.shields.io/gem/dt/mere-blog-theme)
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-theme-prologue.svg)](https://badge.fury.io/rb/jekyll-theme-prologue)
+Mere is a minimal and simple blog theme, and nothing more, for use with Jekyll and GitHub Pages. It has been built with the Bulma frontend framework.
 
-![Prologue Theme](assets/images/screenshot.png "Prologue Theme Screenshot")
+It has a homepage which displays the latest 6 posts and a paginated blog page used to list out all blog posts. 
 
-This is Prologue, a simple, single page responsive site template from [HTML5 UP](https://html5up.net/prologue), now available as a blog-aware Jekyll theme from [Chris Bobbe](https://chrisbobbe.github.io). It features a clean, minimalistic design and a sticky sidebar with navigation-linked scrolling.
+**Mere Blog Theme uses Jekyll 3.9 for compatibility with GitHub Pages**
 
-**Demo**: https://chrisbobbe.github.io/jekyll-theme-prologue/
 
-# Added Features
+## Installation
 
-* **Blogging and multi-page features you expect from Jekyll**
-* Compatible with GitHub Pages
-* **[Formspree.io](https://formspree.io/) contact form integration** - just add your email to the `_config.yml` and it works!
-* Build your homepage with **custom scrolly sections** in the _sections folder
- * Set a **cover photo** for any section (not just the first), with alt text for screen readers and SEO
-* Add your **social profiles** easily in `_config.yml`.
-* Automatic search engine optimization (SEO) **meta tags** based on info you provide in `_config.yml` and frontmatter
-* **Google Analytics** built-in; just put your [Tracking ID](https://support.google.com/analytics/answer/1008080?hl=en) in `_config.yml` as `google_analytics`
-* Custom **404 page** (called 404.html; to activate, move it to your project directory).
+Add this line to your Jekyll site's `Gemfile`:
 
-# Installation
-
-There are two ways to get started (choose one):
-
-1. **Install the [jekyll-theme-prologue gem](https://rubygems.org/gems/jekyll-theme-prologue).** Instructions are in the [Jekyll docs](https://jekyllrb.com/docs/themes/#installing-a-theme). After running `bundle install`, you can find the theme files by running `open $(bundle show jekyll-theme-prologue)`.  A sample working `_config.yml` file ships with the gem; if you want to activate it, move it to your project's root directory. It will do nothing until you move it there, replacing the default `_config.yml` file.
-2. **Fork or clone the [GitHub repository](https://github.com/chrisbobbe/jekyll-theme-prologue).** If you want to use [GitHub Pages](https://pages.github.com/), create a branch named `gh-pages`, and replace `theme: jekyll-theme-prologue` with `remote_theme: chrisbobbe/jekyll-theme-prologue` in the provided `_config.yml` ([GitHub Pages now supports open-source themes on GitHub](https://github.com/blog/2464-use-any-theme-with-github-pages)).
-
-Next, make sure that `url` and `base_url` are set for your own website in `_config.yml`. For local testing, make them both blank. Add a photo avatar to your project, then set `avatar: path/to/your/avatar.jpg` in _config.yml; for example, `avatar: assets/images/avatar.jpg` (48x48 pixels works best). Poke around the sample `_config.yml` file to see how you can add your social profiles.
-
-# Build your homepage
-
-1. **Your `_config.yml` file must include the following line or your homepage won't work**: `collections: [sections]`. This tells Jekyll to look in the _sections folder (which you will create) for your content and render it all on one page.
-
-2. **Create a `_sections` folder** in your project's root directory and start adding content to your homepage. Set a cover photo in any of the sections by adding `cover-photo: path/to/photo.jpg` and `cover-photo-alt: your alt text here` to the section's frontmatter. Sample content is provided in the [GitHub repository](https://github.com/chrisbobbe/jekyll-theme-prologue/tree/master/_sections).
-
-All new sections should be added as html or Markdown documents in the `_sections` folder. The following section variables can be set with [frontmatter](https://jekyllrb.com/docs/frontmatter/):
-- `title` (required)
-- `order` (required; orders the sequence of sections on the page. Example: `1`)
-- `cover-photo` (optional; sets a background image for the section. Example: `assets/images/banner.jpg`)
-- `cover-photo-alt` (required if using a cover photo. Describes the photo for screen readers and SEO; e.g. "Dome of Light art installation, Kaohsiung, Taiwan")
-- `icon` (optional; see [Font Awesome](https://fontawesome.com/icons) for icon codes. Example: `fa-github`)
-- `icon-style` (optional; "solid" is default, "regular" for outline style icons, or "brands" for logos)
-- `auto-header` (optional; "use-title" is default, "none" for no header, or custom header text)
-- `hide` (optional; if `true`, the section won't appear)
-
-# Start blogging!
-
-Jekyll has great resources to get you started writing blog posts. Check out [this Jekyll Docs page](https://jekyllrb.com/docs/posts/) first. When you've written a post or two, copy the following into a new file in your project directory called `blog.html`, and you'll see a link to your blog from the homepage:
-
-```
----
-layout: blog
-title: My Blog
----
+```ruby
+gem "mere-blog-theme"
 ```
 
--- and that's it!
+And add this line to your Jekyll site's `_config.yml`:
 
-# Add a page
-
-To add a page, just make a new .html or .md file in your project directory. There's an example called `reading-list` [provided](https://github.com/chrisbobbe/jekyll-theme-prologue/blob/master/reading-list.md) with the GitHub repository. Add this frontmatter:
-
-```
----
-title: My New Page
-layout: page
----
+```yaml
+theme: mere-blog-theme
 ```
 
-You can also set these page variables in the frontmatter, if you want:
-- `subtitle`
-- `order` (orders links in the nav menu, e.g. `1`)
-- `icon` (optional; see [Font Awesome](https://fontawesome.com/icons) for icon codes. Example: `fa-github`)
-- `icon-style` (optional; "solid" is default, "regular" for outline style icons, or "brands" for logos)
-- `hide` (optional; if `true`, a link won't appear in the nav menu. All this does is remove the nav link; your page will still be served to anyone who has the URL.)
+And then execute:
 
-**This same set of frontmatter variables (including `title`) can also be set in `index.md` and `blog.html`.** You may want to give them titles, or hide the homepage link with `hide: true` if the homepage is the only page.
+    $ bundle
 
-For advanced SEO, this theme also lets you add `permalink` (see [Jekyll Docs](https://jekyllrb.com/docs/permalinks/#where-to-configure-permalinks)), `robots` (string, e.g. "noindex, nofollow"), and `canonical` (boolean; true is default) to any page or post.
+Or install it yourself as:
 
-# Contributing
+    $ gem install mere-blog-theme
 
-Please feel free to submit issues and feature requests!
+## Usage
 
-# Credits
+* [Blog Setup](#blog-setup)
+* [Posts](#posts)
+    * [Post Intro](#post-intro)
+* [Homepage](#homepage)
+* [Authors](#authors)
+* [Google Analytics](#google-analytics)
 
-Thanks to @andrewbanchich for his many Jekyll adaptations of HTML5 UP's elegant themes, which helped and inspired me, and of course many thanks to HTML5 UP.
+### Blog Setup
 
-Original README from HTML5 UP:
+As of 0.4, the blog posts will be displayed on the homepage including pagination, instead of in a separate blog page. 
 
+**The homepage page needs to be called index.html for the blog pagination**
+
+Set the paginator up in the `_config.yml` file with the posts per page and the path to the blog.
+
+```yaml
+paginate: 6
+paginate_path: "/page:num"
 ```
-Prologue by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
+### Posts
 
-This is Prologue, a simple, single page responsive site template. It features a
-clean, minimalistic design and a sticky sidebar with navigation-linked scrolling.
+Posts should be created in the _posts directory as per standard Jekyll usage. The front matter should contain the layout of post, the image to use in the header and the homepage / blog page, the title of the post and the author of the post. You can also set a subtitle for the post if you want to.
 
-Demo content images* are courtesy of the ridiculously talented Felicia Simion. Check out
-more of her amazing work over at deviantART:
-
-http://ineedchemicalx.deviantart.com/
-
-(* = Not included! Only meant for use with my own on-site demo, so please do NOT download
-and/or use any of Felicia's work without her explicit permission!)
-
-Demo banner images* courtesy of Unsplash, a radtastic collection of CC0 (public domain)
-images you can use for pretty much whatever.
-
-(* = Not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-PS: Not sure how to get that contact form working? Give formspree.io a try (it's awesome).
-
-
-Credits:
-
-	Demo Images:
-		Felicia Simion (ineedchemicalx.deviantart.com)
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		CSS3 Pie (css3pie.com)
-		background-size polyfill (github.com/louisremi)
-		Respond.js (j.mp/respondjs)
-		jquery.scrolly (@ajlkn)
-		jquery.scrollzer (@ajlkn)
-		Skel (skel.io)
+```yaml
+layout: post
+title: First Post
+image: /img/home.jpg
+author: C.S. Rhymes
 ```
+
+Wide images will work best, with a minimum width of 1400px. 
+
+#### Post Intro
+
+Version 0.3 allows you to provide a intro and an intro image in your frontmatter. When creating your post add a short `intro` text an `intro_image` as a path to an image and then specify the `intro_image_ratio` which should be a [Bulma image](https://bulma.io/documentation/elements/image/) class. 
+
+```yaml
+layout: post
+title: Post with Intro
+author: Guest Author
+intro: This is the introduction text for this post. It appears large and bold at the top of the post
+intro_image: /img/home.jpg
+intro_image_ratio: is-16by9
+```
+
+Only the intro is required if you want to display it. If you don't want an image then don't specify one and just the intro text will display.
+
+### Homepage
+
+Finally, configure the homepage by creating an `index.html` page and configure the frontmatter with the layout of homepage, the title, subtitle (optional) and the image. You can set the hero_height to is-large if you want to make the homepage header a bit larger. 
+
+```yaml
+layout: homepage
+title: Mere Blog Theme
+subtitle: This is the demo site for the Mere Blog Theme
+image: /img/home.jpg
+hero_height: is-large
+```
+
+### Authors
+
+To enable the authors section, create a directory named `_authors` and create a page for each author within it. The author pages should have front matter in the following format. 
+
+**NOTE** The author name should match the author name in their posts exactly. 
+
+```yaml
+layout: author
+title: The authors page title
+name: Author Name
+position: Web Designer
+description: The short description of the author
+avatar: /img/avatar.png
+website: https://www.csrhymes.com
+```
+
+The website and avatar are optional, but if you are stuck for author images, why not try [https://getavataaars.com](https://getavataaars.com). Square images work best. You can then write about the author in the page content. 
+ 
+Next, create an `authors.md` page in the root of your site and set the layout to authors.
+
+```yaml
+layout: authors
+title: Authors
+description: The authors page
+```
+
+Add authors as a collection in your _config.yml file with output set to true so the pages are generated. 
+
+```yaml
+collections:
+  authors:
+    output: true
+```
+
+When you build your site, the authors link will appear in the navbar. The authors page will display the authors you have added. You can then click on their name or image to view the author page, along with a list of their 4 latest posts. 
+
+There will also be a link back to the authors page at the bottom of the post. 
+
+#### Author Social Profiles
+
+**New in 0.2.1 **
+
+You can add links to an author's social profile pages by adding the profile name and link to the front matter in the author's page (such as _authors/chris.md). The below social profiles are available.
+
+```yaml
+facebook: https://www.facebook.com/
+twitter: https://www.twitter.com/
+github: https://www.github.com/
+gitlab: https://www.gitlab.com
+instagram: https://www.instagram.com
+linkedin: https://www.linkedin.com/
+medium: https://www.medium.com/
+stack_overflow: https://stackoverflow.com/
+```
+
+### Google Analytics
+
+To enable Google Analytics add `google_analytics: UA-xxxxxxxx` to your `_config.yml` replacing the UA-xxxxxxxx with your Google Analytics property.
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/chrisrhymes/mere-blog-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `mere-blog-theme.gemspec` accordingly.
+
+## License
+
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
