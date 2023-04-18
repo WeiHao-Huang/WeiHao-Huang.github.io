@@ -5,7 +5,7 @@ email: your-email@domain.com
 description: >
   The demo site for Mere Blog Theme, made for Jekyll and GitHub pages websites
 baseurl: "/mere-blog-theme"
-url: "https://www.csrhymes.com"
+url: "https://github.com/WeiHao-Huang/WeiHao-Huang.github.io"
 permalink: pretty
 
 paginate: 6
