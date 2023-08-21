@@ -1,11 +1,11 @@
 # Setup
 title: Weihao Huang
 description: A blog focused on mathematics and machine learning theory
-url: https://vszhub.github.io
+url: https://weihao-huang.github.io
 avatar: /avatar.jpeg
 paginate: 5
 permalink: pretty
-cover_image: /bg.jpeg
+cover_image: /bg.jpg
 
 # Gems
 plugins:
