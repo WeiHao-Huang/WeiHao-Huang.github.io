@@ -1,3 +1,12 @@
+---
+layout: post
+title: Marchenko-Pastur Law
+date: 2023-09-22
+last_modified_at: 2023-9-22
+tags: [jekyll theme, jekyll, tutorial]
+toc:  true
+---
+
 >  本文旨在以简短的篇幅阐述 Marchenko-Pastur Law 及其相关的应用。
 
 <!-- TODO:Marchenko-Pastur Law 要不要打法语音标？-->
